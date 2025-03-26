@@ -1,5 +1,5 @@
 const config = {
-  projectName: 'ai-response-generator',
+  projectName: 'ai-answer-mini',
   date: '2023-7-15',
   designWidth: 750,
   deviceRatio: {

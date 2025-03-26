@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>项目下载中心</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>项目下载中心</h1>
+      <p>这是一个简单的项目浏览和下载页面</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#" class="active" data-section="home">首页</a></li>
+        <li><a href="#" data-section="downloads">下载中心</a></li>
+        <li><a href="#" data-section="api">API文档</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- 首页内容 -->
+      <section id="home" class="content-section active">
+        <div class="card">
+          <h2>项目状态: 在线</h2>
+          <p>项目服务正常运行中。</p>
+          <p>当前版本: 1.0.0</p>
+        </div>
+
+        <h2>可用功能</h2>
+        
+        <div class="card endpoint">
+          <span class="method">API</span>
+          <p class="endpoint-url">/api/echo</p>
+          <p>返回提供的查询参数作为JSON响应。</p>
+          <p>示例: <code>?name=value&another=parameter</code></p>
+          <button onclick="testEcho()">测试API</button>
+        </div>
+
+        <div class="card endpoint">
+          <span class="method">下载</span>
+          <p class="endpoint-url">项目结构</p>
+          <p>下载项目结构概览。</p>
+          <button onclick="downloadStructure()">下载项目结构</button>
+        </div>
+      </section>
+
+      <!-- 下载中心内容 -->
+      <section id="downloads" class="content-section">
+        <div class="download-section">
+          <h2>项目结构</h2>
+          <p>下载包含项目结构概览的文本文件：</p>
+          <button onclick="downloadStructure()" class="download-btn">下载结构</button>
+        </div>
+        
+        <div class="download-section">
+          <h2>主要文件</h2>
+          <ul class="file-list">
+            <li class="file-item">
+              <span>index.ts</span>
+              <button class="download-btn" onclick="downloadFile('index.ts')">下载</button>
+            </li>
+            <li class="file-item">
+              <span>路由文件夹</span>
+              <button class="download-btn" onclick="downloadFolder('routes')">下载</button>
+            </li>
+            <li class="file-item">
+              <span>中间件文件夹</span>
+              <button class="download-btn" onclick="downloadFolder('middleware')">下载</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- API文档内容 -->
+      <section id="api" class="content-section">
+        <div class="card">
+          <h2>API端点文档</h2>
+          
+          <div class="api-endpoint">
+            <h3>Echo API</h3>
+            <p><strong>URL:</strong> <code>/api/echo</code></p>
+            <p><strong>方法:</strong> GET</p>
+            <p><strong>描述:</strong> 返回所有提供的查询参数作为JSON响应。</p>
+            <p><strong>参数:</strong> 任意查询参数</p>
+            <p><strong>示例:</strong></p>
+            <div class="code-example">
+              <pre><code>URL: /api/echo?name=张三&age=25&city=北京
+              
+响应:
+{
+  "success": true,
+  "echo": {
+    "name": "张三",
+    "age": "25",
+    "city": "北京"
+  },
+  "timestamp": "2023-07-21T12:34:56.789Z"
+}
+              </code></pre>
+            </div>
+            <div class="test-api">
+              <h4>测试API</h4>
+              <form id="echo-form">
+                <div class="form-group">
+                  <label for="param1-name">参数名称</label>
+                  <input type="text" id="param1-name" value="name">
+                  <label for="param1-value">参数值</label>
+                  <input type="text" id="param1-value" value="张三">
+                </div>
+                <div class="form-group">
+                  <label for="param2-name">参数名称</label>
+                  <input type="text" id="param2-name" value="age">
+                  <label for="param2-value">参数值</label>
+                  <input type="text" id="param2-value" value="25">
+                </div>
+                <button type="button" onclick="testEchoWithParams()">发送请求</button>
+              </form>
+              <div class="response-container">
+                <h4>API响应</h4>
+                <pre id="echo-response"><code>// 响应将显示在这里</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 项目下载中心. 保留所有权利.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "echo": {
+    "name": "测试用户",
+    "action": "查询",
+    "timestamp": "2023-07-21T12:34:56.789Z"
+  },
+  "timestamp": "2023-07-21T12:34:56.789Z"
+}

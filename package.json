@@ -1,0 +1,43 @@
+{
+  "name": "ai-response-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Response Generator Mini Program",
+  "templateInfo": {
+    "name": "default",
+    "typescript": false,
+    "css": "less"
+  },
+  "scripts": {
+    "build": "taro build --type weapp",
+    "dev": "npm run build -- --watch"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@tarojs/components": "3.6.8",
+    "@tarojs/helper": "3.6.8",
+    "@tarojs/plugin-framework-react": "3.6.8",
+    "@tarojs/plugin-platform-weapp": "3.6.8",
+    "@tarojs/react": "3.6.8",
+    "@tarojs/runtime": "3.6.8",
+    "@tarojs/shared": "3.6.8",
+    "@tarojs/taro": "3.6.8",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@babel/runtime": "^7.7.7",
+    "@tarojs/cli": "3.6.8",
+    "@tarojs/webpack5-runner": "3.6.8",
+    "@types/react": "^18.0.0",
+    "babel-preset-taro": "3.6.8",
+    "webpack": "^5.69.0"
+  }
+}
